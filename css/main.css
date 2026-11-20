@@ -1,0 +1,6 @@
+/* Точка входа стилей: подключается в каждой HTML-странице. */
+@import './fonts.css';
+@import './base.css';
+@import './layout.css';
+@import './components.css';
+@import './pages.css';

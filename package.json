@@ -1,0 +1,17 @@
+{
+  "name": "sandbox-shop",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "oxlint js vite.config.js",
+    "check": "npm run lint && npm run build"
+  },
+  "devDependencies": {
+    "oxlint": "^1.93.0",
+    "vite": "^8.3.6"
+  }
+}

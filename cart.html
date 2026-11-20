@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Корзина Sandbox Shop." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Корзина — Sandbox Shop</title>
+  </head>
+  <body data-page="cart">
+    <!-- @include partials/header.html -->
+
+    <main id="main" class="site-main">
+      <div class="container cart-page">
+        <div class="cart">
+          <section class="cart__main" aria-labelledby="cart-title">
+            <div class="cart__head">
+              <h1 class="page-title" id="cart-title">Your bag</h1>
+              <button type="button" class="link-btn" data-clear hidden>Очистить корзину</button>
+            </div>
+
+            <div class="cart-empty" data-cart-guest hidden>
+              <p>No products in your bag</p>
+              <a class="visually-hidden" href="/login.html?redirect=%2Fcart.html">Войдите, чтобы пользоваться корзиной</a>
+            </div>
+
+            <div class="cart-empty" data-cart-empty hidden>
+              <p>No products in your bag</p>
+              <div class="cart-empty__actions">
+                <a class="btn btn--small" href="/catalog.html">Перейти в каталог</a>
+              </div>
+            </div>
+
+            <div data-cart-status></div>
+            <ul class="cart-items" data-items></ul>
+            <p class="cart__limits" data-limits hidden></p>
+          </section>
+
+          <aside class="summary" aria-labelledby="summary-title">
+            <h2 class="summary__title" id="summary-title">Order Summary</h2>
+            <div class="summary__breakdown" data-empty-summary hidden>
+              <div><span>Subtotal</span><span>0</span></div>
+              <div><span>Discount (-0%)</span><span class="summary__discount">0</span></div>
+            </div>
+            <div class="summary__row">
+              <span>Total</span>
+              <strong class="summary__total" data-total aria-live="polite">$0.00</strong>
+            </div>
+            <p class="summary__note" data-summary-note hidden>Обновляем количество — итог пересчитает сервер…</p>
+            <button type="button" class="btn btn--light btn--block" data-checkout disabled>Go to checkout</button>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- @include partials/footer.html -->
+    <!-- @include partials/templates.html -->
+
+    <dialog class="modal modal--message" id="order-dialog" aria-labelledby="order-title">
+      <button type="button" class="modal__close" data-dialog-close aria-label="Закрыть">
+        <svg class="icon" width="24" height="24" aria-hidden="true"><use href="/icons.svg#close"></use></svg>
+      </button>
+      <h2 class="modal__title" id="order-title">Спасибо!</h2>
+      <p class="modal__text" data-order-text>Заказ оформлен</p>
+      <div class="modal__actions">
+        <a class="btn btn--square btn--block btn--large" href="/profile.html">Мои заказы</a>
+        <a class="btn btn--square btn--block btn--outline" href="/catalog.html">Продолжить покупки</a>
+      </div>
+    </dialog>
+
+    <template id="tpl-cart-item">
+      <li class="cart-item">
+        <a class="cart-item__media media" href="" tabindex="-1" aria-hidden="true">
+          <img alt="" loading="lazy" decoding="async" />
+        </a>
+        <div class="cart-item__body">
+          <div class="cart-item__text">
+            <a class="cart-item__title" href=""></a>
+            <p class="cart-item__price"></p>
+            <p class="cart-item__sum" hidden></p>
+          </div>
+          <div class="cart-item__actions">
+            <button type="button" class="cart-item__remove" data-remove>
+              <svg class="icon" width="24" height="24" aria-hidden="true"><use href="/icons.svg#trash"></use></svg>
+            </button>
+            <div class="stepper" role="group">
+              <button type="button" class="stepper__btn" data-step="-1" aria-label="Уменьшить">
+                <svg class="icon" width="24" height="24" aria-hidden="true"><use href="/icons.svg#minus"></use></svg>
+              </button>
+              <output class="stepper__value" aria-live="polite"></output>
+              <button type="button" class="stepper__btn" data-step="1" aria-label="Увеличить">
+                <svg class="icon" width="24" height="24" aria-hidden="true"><use href="/icons.svg#plus"></use></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </template>
+
+    <script type="module" src="/js/pages/cart.js"></script>
+  </body>
+</html>

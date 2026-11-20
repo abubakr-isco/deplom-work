@@ -1,0 +1,38 @@
+<div class="config-banner" data-config-banner role="alert" hidden>
+  Адрес сервера API не задан. Скопируйте <code>.env.example</code> в <code>.env.local</code>, укажите
+  <code>API_PROXY_TARGET</code> или <code>VITE_API_ORIGIN</code> и перезапустите <code>npm run dev</code>.
+</div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <button type="button" class="icon-btn site-header__burger" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+      <svg class="icon icon--menu" width="24" height="24" aria-hidden="true"><use href="/icons.svg#menu"></use></svg>
+      <svg class="icon icon--close" width="24" height="24" aria-hidden="true"><use href="/icons.svg#close"></use></svg>
+    </button>
+
+    <nav class="site-nav site-nav--left" aria-label="Основная навигация">
+      <a href="/" data-nav="home">Home</a>
+      <a href="/catalog.html" data-nav="catalog">Products</a>
+    </nav>
+
+    <a class="logo" href="/" aria-label="WEPRO — на главную">
+      <img class="logo__image" src="/images/logo.png" alt="WEPRO" width="147" height="51" />
+    </a>
+
+    <nav class="site-nav site-nav--right" aria-label="Аккаунт и корзина">
+      <a href="/login.html" data-account-link data-nav="account">Account</a>
+      <a href="/cart.html" data-nav="cart" data-cart-link>Bag (<span data-cart-count>0</span>)</a>
+    </nav>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="mobile-menu__nav" aria-label="Меню">
+      <a href="/">Home</a>
+      <a href="/catalog.html">Products</a>
+      <div class="mobile-menu__categories" data-menu-categories></div>
+      <a href="/cart.html">Bag</a>
+      <a href="/login.html" data-account-link>Account</a>
+      <a href="/register.html" data-guest-only>Register</a>
+    </nav>
+  </div>
+</header>

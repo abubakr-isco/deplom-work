@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Профиль и история заказов Sandbox Shop." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Профиль — Sandbox Shop</title>
+  </head>
+  <body data-page="profile" data-private>
+    <!-- @include partials/header.html -->
+
+    <main id="main" class="site-main">
+      <div class="container profile">
+        <section class="profile__user">
+          <p class="profile__eyebrow">MY PROFILE</p>
+          <h1 class="profile__name" data-user-name>Alex Adams</h1>
+          <p class="profile__contact" data-user-phone hidden></p>
+          <p class="profile__contact" data-user-email hidden></p>
+          <p class="profile__since" data-user-since hidden></p>
+        </section>
+
+        <button type="button" class="btn btn--square profile__logout" data-logout>Log out</button>
+
+        <section class="profile__orders" aria-labelledby="orders-title">
+          <h2 class="section__title" id="orders-title">My orders</h2>
+          <div class="orders" data-list></div>
+          <div data-status></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- @include partials/footer.html -->
+    <!-- @include partials/templates.html -->
+
+    <template id="tpl-order">
+      <article class="order">
+        <header class="order__head">
+          <div>
+            <h3 class="order__title"></h3>
+            <p class="order__meta"></p>
+          </div>
+          <p class="order__total"><span>Итого</span> <strong data-order-total></strong></p>
+        </header>
+        <ul class="order__items"></ul>
+      </article>
+    </template>
+
+    <template id="tpl-order-item">
+      <li class="order-item">
+        <a class="order-item__media media" href="" tabindex="-1" aria-hidden="true">
+          <img alt="" loading="lazy" decoding="async" />
+        </a>
+        <a class="order-item__title" href=""></a>
+        <p class="order-item__meta"></p>
+      </li>
+    </template>
+
+    <script type="module" src="/js/pages/profile.js"></script>
+  </body>
+</html>

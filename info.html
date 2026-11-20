@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Информация о Sandbox Shop: вопросы и ответы, доставка, правила." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Информация — Sandbox Shop</title>
+  </head>
+  <body data-page="info">
+    <!-- @include partials/header.html -->
+
+    <main id="main" class="site-main">
+      <div class="container info">
+        <h1 class="page-title">Информация</h1>
+
+        <nav class="info__nav" aria-label="Разделы">
+          <a href="#about">О магазине</a>
+          <a href="#faq">Вопросы и ответы</a>
+          <a href="#shipping">Доставка</a>
+          <a href="#returns">Возврат</a>
+          <a href="#contacts">Контакты</a>
+          <a href="#terms">Условия использования</a>
+          <a href="#privacy">Конфиденциальность и cookies</a>
+          <a href="#cookies">Настройки cookies</a>
+        </nav>
+
+        <section class="info__section" id="about">
+          <h2>О магазине</h2>
+          <p>
+            Sandbox Shop — учебный интернет-магазин дипломного проекта. Каталог, корзина, заказы и отзывы работают с настоящим
+            учебным API, но покупки не оплачиваются и не доставляются.
+          </p>
+        </section>
+
+        <section class="info__section" id="faq">
+          <h2>Вопросы и ответы</h2>
+          <dl class="faq">
+            <dt>Нужен ли аккаунт?</dt>
+            <dd>Каталог доступен всем. Корзина, заказы и отзывы — после регистрации.</dd>
+            <dt>Какой пароль указывать?</dt>
+            <dd>Только учебный: не используйте настоящие пароли от почты, банка или соцсетей.</dd>
+            <dt>Сколько хранятся данные?</dt>
+            <dd>Аккаунты, корзины, заказы и комментарии автоматически удаляются через 45 дней.</dd>
+            <dt>Есть ли ограничения?</dt>
+            <dd>
+              В корзине — до 20 разных товаров и до 20 шт. каждого; отзыв — от 2 до 300 символов, не больше 3 отзывов к одному
+              товару. API принимает до 120 запросов в минуту.
+            </dd>
+          </dl>
+        </section>
+
+        <section class="info__section" id="shipping">
+          <h2>Доставка</h2>
+          <p>Магазин учебный: заказы сохраняются в истории профиля, но реальная доставка не выполняется.</p>
+        </section>
+
+        <section class="info__section" id="returns">
+          <h2>Возврат</h2>
+          <p>Так как оплаты и доставки нет, возврат не требуется. Историю заказов можно посмотреть в профиле.</p>
+        </section>
+
+        <section class="info__section" id="contacts">
+          <h2>Контакты</h2>
+          <p>По вопросам работы учебного API обращайтесь к руководителю дипломного проекта.</p>
+        </section>
+
+        <section class="info__section" id="terms">
+          <h2>Условия использования</h2>
+          <p>
+            Сайт предназначен только для обучения. Не вводите настоящие персональные данные и пароли. Все учебные данные
+            удаляются через 45 дней.
+          </p>
+        </section>
+
+        <section class="info__section" id="privacy">
+          <h2>Конфиденциальность и cookies</h2>
+          <p>
+            Сайт не использует рекламные cookies. В браузере (localStorage) хранятся токен входа — он удаляется при выходе — и
+            номера ваших отзывов, чтобы показывать кнопку «Удалить». Всё это стирается при очистке данных сайта в браузере.
+          </p>
+        </section>
+
+        <section class="info__section" id="cookies">
+          <h2>Настройки cookies</h2>
+          <p>Сайт не устанавливает cookies и не использует рекламное отслеживание, поэтому дополнительных настроек cookies нет.</p>
+          <p>Данные входа и сведения об отзывах хранятся в браузере. Выйти из аккаунта можно в <a href="/profile.html">профиле</a>.</p>
+        </section>
+      </div>
+    </main>
+
+    <!-- @include partials/footer.html -->
+    <!-- @include partials/templates.html -->
+
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

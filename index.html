@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sandbox Shop — учебный интернет-магазин: каталог, корзина, заказы и отзывы." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Sandbox Shop — интернет-магазин</title>
+  </head>
+  <body data-page="home">
+    <!-- @include partials/header.html -->
+
+    <main id="main" class="site-main">
+      <section class="hero">
+        <img class="hero__image" src="/images/hero.jpg" alt="" fetchpriority="high" />
+        <div class="hero__content container">
+          <p class="hero__eyebrow">Лучшие природные ингредиенты</p>
+          <h1 class="hero__title">
+            <span class="hero__title-desktop">Тоник для лица</span>
+            <span class="hero__title-mobile">Естественное сияние каждый день</span>
+          </h1>
+          <a class="btn btn--glass hero__cta" href="/catalog.html">За покупками</a>
+        </div>
+      </section>
+
+      <section class="section container" aria-labelledby="best-title" data-bestsellers>
+        <h2 class="section__title" id="best-title">Бестселлеры</h2>
+        <div class="product-grid product-grid--home" data-list></div>
+        <div data-status></div>
+      </section>
+
+      <section class="section container" aria-labelledby="categories-title" data-categories>
+        <h2 class="section__title" id="categories-title">Категории</h2>
+        <div class="category-grid" data-list></div>
+        <div data-status></div>
+      </section>
+
+      <section class="section container" aria-labelledby="new-title" data-newest>
+        <h2 class="section__title" id="new-title">Новинки</h2>
+        <div class="product-grid product-grid--home" data-list></div>
+        <div data-status></div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+    <!-- @include partials/templates.html -->
+
+    <template id="tpl-category-card">
+      <a class="category-card media" href="">
+        <img alt="" loading="lazy" decoding="async" />
+        <span class="category-card__label"></span>
+      </a>
+    </template>
+
+    <template id="tpl-skeleton-category">
+      <div class="category-card skeleton" aria-hidden="true"></div>
+    </template>
+
+    <script type="module" src="/js/pages/home.js"></script>
+  </body>
+</html>

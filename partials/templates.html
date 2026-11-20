@@ -1,0 +1,80 @@
+<!-- Общие шаблоны и окна. JS только копирует эти шаблоны и заполняет текст/атрибуты. -->
+
+<div class="toasts" data-toasts role="status" aria-live="polite"></div>
+
+<!-- Подтверждение действия (удалить отзыв, очистить корзину) -->
+<dialog class="modal modal--message" id="confirm-dialog" aria-labelledby="confirm-title">
+  <button type="button" class="modal__close" data-dialog-close aria-label="Закрыть">
+    <svg class="icon" width="24" height="24" aria-hidden="true"><use href="/icons.svg#close"></use></svg>
+  </button>
+  <h2 class="modal__title" id="confirm-title" data-confirm-title></h2>
+  <p class="modal__text" data-confirm-text></p>
+  <div class="modal__actions">
+    <button type="button" class="btn btn--square btn--block" data-confirm-ok>Подтвердить</button>
+    <button type="button" class="btn btn--square btn--block btn--outline" data-dialog-close>Отмена</button>
+  </div>
+</dialog>
+
+<template id="tpl-toast">
+  <div class="toast">
+    <span class="toast__text"></span>
+    <button type="button" class="toast__close" aria-label="Закрыть уведомление">×</button>
+  </div>
+</template>
+
+<template id="tpl-product-card">
+  <article class="product-card">
+    <a class="product-card__link" href="">
+      <div class="product-card__media media">
+        <img alt="" loading="lazy" decoding="async" />
+        <span class="badge" hidden></span>
+      </div>
+      <div class="product-card__info">
+        <h3 class="product-card__title"></h3>
+        <span class="product-card__price">
+          <s class="product-card__old-price" hidden></s>
+          <span data-price></span>
+        </span>
+      </div>
+    </a>
+  </article>
+</template>
+
+<template id="tpl-skeleton-card">
+  <div class="product-card product-card--skeleton" aria-hidden="true">
+    <div class="product-card__media skeleton"></div>
+    <div class="product-card__info">
+      <span class="skeleton skeleton--line"></span>
+      <span class="skeleton skeleton--short"></span>
+    </div>
+  </div>
+</template>
+
+<template id="tpl-state-loading">
+  <div class="state state--loading" role="status">
+    <span class="spinner" aria-hidden="true"></span>
+    <span data-text>Загрузка…</span>
+  </div>
+</template>
+
+<template id="tpl-state-error">
+  <div class="state state--error" role="alert">
+    <p data-text>Не удалось загрузить данные.</p>
+    <button type="button" class="btn btn--outline btn--small" data-retry>Повторить</button>
+  </div>
+</template>
+
+<template id="tpl-state-empty">
+  <div class="state state--empty">
+    <p data-text>Здесь пока ничего нет.</p>
+    <a class="btn btn--small" href="/catalog.html" data-action hidden></a>
+  </div>
+</template>
+
+<template id="tpl-footer-link">
+  <li><a href=""></a></li>
+</template>
+
+<template id="tpl-menu-link">
+  <a href=""></a>
+</template>

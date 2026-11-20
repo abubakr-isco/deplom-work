@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Каталог Sandbox Shop: фильтр по категории и цене." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Каталог — Sandbox Shop</title>
+  </head>
+  <body data-page="catalog">
+    <!-- @include partials/header.html -->
+
+    <main id="main" class="site-main">
+      <div class="catalog">
+        <aside class="filters" id="catalog-filters" aria-labelledby="filters-title">
+          <div class="filters__panel">
+            <div class="filters__head">
+              <h2 class="filters__title" id="filters-title">Filters</h2>
+              <svg class="icon filters__icon" width="20" height="20" aria-hidden="true"><use href="/icons.svg#filters"></use></svg>
+              <button type="button" class="icon-btn filters__close" data-filters-close aria-label="Закрыть фильтры">
+                <svg class="icon" width="24" height="24" aria-hidden="true"><use href="/icons.svg#close"></use></svg>
+              </button>
+            </div>
+
+            <ul class="filters__categories" data-filter-categories>
+              <li class="filters__loading">Loading categories…</li>
+            </ul>
+
+            <section class="filters__price" aria-labelledby="price-title">
+              <button type="button" class="filters__price-toggle" data-price-toggle aria-expanded="true" aria-controls="price-body">
+                <span id="price-title">Price</span>
+                <svg class="icon" width="20" height="20" aria-hidden="true"><use href="/icons.svg#chevron-up"></use></svg>
+              </button>
+              <div class="filters__price-body" id="price-body">
+                <div class="price-range" data-price-range>
+                  <div class="price-range__track" aria-hidden="true"></div>
+                  <input type="range" min="0" max="1000" step="1" value="0" data-range="min" aria-label="Минимальная цена, USD" />
+                  <input type="range" min="0" max="1000" step="1" value="1000" data-range="max" aria-label="Максимальная цена, USD" />
+                </div>
+                <div class="price-inputs">
+                  <label class="price-input">
+                    <span class="visually-hidden">Price от, USD</span>$
+                    <input type="number" inputmode="decimal" min="0" max="100000" step="0.01" placeholder="0" data-price="min" />
+                  </label>
+                  <span aria-hidden="true">—</span>
+                  <label class="price-input">
+                    <span class="visually-hidden">Price до, USD</span>$
+                    <input type="number" inputmode="decimal" min="0" max="100000" step="0.01" placeholder="макс." data-price="max" />
+                  </label>
+                </div>
+                <p class="field__error" data-price-error hidden></p>
+              </div>
+            </section>
+
+            <button type="button" class="btn btn--block" data-apply>Apply Filter</button>
+            <a class="filters__reset" href="/catalog.html">Reset filters</a>
+          </div>
+        </aside>
+        <div class="filters-backdrop" data-filters-close hidden></div>
+
+        <section class="catalog__content" aria-labelledby="catalog-title">
+          <div class="catalog__head">
+            <h1 class="page-title" id="catalog-title">All products</h1>
+            <button type="button" class="icon-btn icon-btn--soft catalog__filters-btn" data-filters-open aria-controls="catalog-filters" aria-expanded="false" aria-label="Открыть фильтры">
+              <svg class="icon" width="20" height="20" aria-hidden="true"><use href="/icons.svg#filters"></use></svg>
+            </button>
+          </div>
+          <p class="catalog__meta" data-meta aria-live="polite"></p>
+
+          <div class="product-grid" data-list></div>
+          <div data-status></div>
+
+          <nav class="pagination" aria-label="Страницы каталога" data-pagination hidden>
+            <a class="pagination__arrow" data-prev aria-label="Предыдущая страница">
+              <svg class="icon" width="20" height="20" aria-hidden="true"><use href="/icons.svg#chevron-left"></use></svg>
+            </a>
+            <ol data-pages></ol>
+            <a class="pagination__arrow" data-next aria-label="Следующая страница">
+              <svg class="icon" width="20" height="20" aria-hidden="true"><use href="/icons.svg#chevron-right"></use></svg>
+            </a>
+          </nav>
+        </section>
+      </div>
+    </main>
+
+    <!-- @include partials/footer.html -->
+    <!-- @include partials/templates.html -->
+
+    <template id="tpl-filter-category">
+      <li>
+        <a href="">
+          <span><span data-name></span> <small data-count></small></span>
+          <svg class="icon" width="20" height="20" aria-hidden="true"><use href="/icons.svg#chevron-right"></use></svg>
+        </a>
+      </li>
+    </template>
+
+    <template id="tpl-page-link">
+      <li><a class="pagination__item" href=""></a></li>
+    </template>
+
+    <template id="tpl-page-current">
+      <li><span class="pagination__item is-current" aria-current="page"></span></li>
+    </template>
+
+    <template id="tpl-page-gap">
+      <li><span class="pagination__gap" aria-hidden="true">…</span></li>
+    </template>
+
+    <script type="module" src="/js/pages/catalog.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["import", "oxc", "unicorn"],
+  "env": { "browser": true, "es2024": true },
+  "globals": { "__API_PROXY_CONFIGURED__": "readonly" },
+  "categories": { "correctness": "error", "suspicious": "warn" },
+  "rules": {
+    "no-unused-vars": "error",
+    "no-undef": "error",
+    "eqeqeq": "error",
+    "no-underscore-dangle": ["warn", { "allow": ["_id"] }],
+    "import/no-unassigned-import": ["warn", { "allow": ["**/*.css", "**/app.js"] }]
+  },
+  "overrides": [
+    {
+      "files": ["vite.config.js"],
+      "env": { "node": true, "browser": false }
+    }
+  ],
+  "ignorePatterns": ["dist/**"]
+}
